@@ -1,54 +1,66 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
 body {
   background: #444;
   display: flex;
   padding: 40px;
-  }
-  /* ---- THE ACTUAL 320x240 SCREEN CONTAINER ---- */
+}
+
+/* SCREEN */
 .screen {
   position: relative;
   width: 320px;
   height: 240px;
-  background-image: url(sayawallpaper.png);
+  background-color: rgba(0, 0, 0, 0);
   color: #fff;
   overflow: hidden;
-  outline: 2px solid #0f0; /* just marks the real screen edge, doesn't render on device */
-  }
-    /* HEADER */
+  outline: 2px solid #0f0;
+}
+
+/* HEADER */
 .header {
- display: flex;
+  position: relative;
+  z-index: 2; 
+  display: flex;
   justify-content: space-between;
   align-items: center;
-
   height: 18px;
   padding: 0 7px;
-
-  box-sizing: border-box;
   color: #fff;
-
   font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
   font-size: 12px;
   font-weight: bold;
-
   background: linear-gradient(to bottom, #242424, #111111 45%, #020202 55%, #2e2e2e);
-
   border-bottom: 1px solid #111;
   text-shadow: 0 1px 1px #000;
   box-shadow: 0 0px 9px 3px rgba(0, 0, 0, 0.9);
-  }
-  .header span {
+}
+.header span {
   line-height: 20px;
 }
+
  /* =========================================================
-    SCREEN 1: MAIN MENU (sidebar list, one item selected)
+    SCREEN 1: MAIN MENU (ONE ITEM SELECTED)
     ========================================================= */
-.menu-list {
-  position:absolute;
+.wallpaper {
+  position: absolute;
+  top: 0;
   left: 0;
+  width: 320px;
+  height: 240px;
+  background: red url("/ui/wallpaper/sayawallpaper.png") center/cover no-repeat;
+  z-index: 0;
+}
+.menu-list {
+  position: absolute;
+  left: 0;
+  top: 18px;
   width: 190px;
   height: 222px;
-  top: 18px;
+  z-index: 1;
 }
 .menu-item {
   position:absolute;
@@ -58,7 +70,6 @@ body {
   align-items: center;
   box-sizing: border-box;
   border-radius: 0 10px 10px 0;
-
   font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   background: linear-gradient(
@@ -69,8 +80,7 @@ body {
       rgba(15, 15, 15, 0.96) 100%
     );
   border: 1px solid rgba(255, 255, 255, 0.12);
-
-   box-shadow:
+  box-shadow:
       7px 0 16px -1px rgba(0, 0, 0, 0.75),
       0 1px 0 rgba(255, 255, 255, 0.08) inset,
       0 -1px 0 rgba(0, 0, 0, 0.55) inset;
@@ -91,31 +101,10 @@ body {
     position: absolute;
     right: 14px;
   }
-#songs {
-  top: 0px;
-  height: 32px;
-}
-#playlists {
-    top: 32px;
-    height: 32px;
- }
- #artists {
-  top: 64px;
-  height: 32px;
- }
- #albums {
-  top: 96px;
-  height: 32px;
- }
- #pong {
-  top: 128px;
-  height: 32px;
- }
- #devices {
-  top: 160px;
-  height: 32px;
- }
- #settings {
-  top: 192px;
-  height: 31px;
- }
+#songs     { top: 0px;   height: 32px; }
+#playlists { top: 32px;  height: 32px; }
+#artists   { top: 64px;  height: 32px; }
+#albums    { top: 96px;  height: 32px; }
+#pong      { top: 128px; height: 32px; }
+#devices   { top: 160px; height: 32px; }
+#settings  { top: 192px; height: 31px; }
