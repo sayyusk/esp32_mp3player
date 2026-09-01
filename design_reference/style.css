@@ -1,0 +1,223 @@
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+body {
+  background: #444;
+  display: flex;
+  padding: 40px;
+}
+
+/* SCREEN */
+.screen {
+  position: relative;
+  width: 320px;
+  height: 240px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  overflow: hidden;
+  margin-right: 20px;
+  outline: 2px solid #0f0;
+}
+
+/* HEADER */
+.header {
+  position: relative;
+  z-index: 2; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 18px;
+  padding: 0 7px;
+  color: #fff;
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  background: linear-gradient(to bottom, #242424, #111111 45%, #020202 55%, #2e2e2e);
+  border-bottom: 1px solid #111;
+  text-shadow: 0 1px 1px #000;
+  box-shadow: 0 0px 9px 3px rgba(0, 0, 0, 0.9);
+}
+.header span {
+  line-height: 20px;
+}
+
+ /* =========================================================
+    SCREEN 1: MAIN MENU (ONE ITEM SELECTED)
+    ========================================================= */
+.wallpaper {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 320px;
+  height: 222px;
+  /* bg should be 320x222*/
+  background: url("https://i.pinimg.com/1200x/12/d6/40/12d64060a6f19ed214a62f816d5da562.jpg")
+  center/cover no-repeat;
+  z-index: 0;
+}
+.menu-list {
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 190px;
+  height: 222px;
+  z-index: 1;
+}
+.menu-item {
+  position:absolute;
+  width: 190px;
+  padding-left: 10px;;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 0 10px 10px 0;
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  background: linear-gradient(
+      to bottom,
+      rgba(50, 50, 50, 0.95) 0%,
+      rgba(20, 20, 20, 0.94) 45%,
+      rgba(2, 2, 2, 0.94) 55%,
+      rgba(15, 15, 15, 0.96) 100%
+    );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+      7px 0 16px -1px rgba(0, 0, 0, 0.75),
+      0 1px 0 rgba(255, 255, 255, 0.08) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.55) inset;
+  }
+.menu-item.selected {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.97) 0%,
+      rgba(240, 240, 240, 0.94) 45%,
+      rgba(214, 214, 214, 0.91) 55%,
+      rgba(232, 232, 232, 0.96) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #000;
+  font-weight: bold;
+}
+.menu-item .arrow {
+    position: absolute;
+    right: 14px;
+  }
+#songs     { top: 0px;   height: 32px; }
+#playlists { top: 32px;  height: 32px; }
+#artists   { top: 64px;  height: 32px; }
+#albums    { top: 96px;  height: 32px; }
+#pong      { top: 128px; height: 32px; }
+#devices   { top: 160px; height: 32px; }
+#settings  { top: 192px; height: 31px; }
+
+ /* =========================================================
+    SCREEN 2: SONGS LIST (ONE ITEM SELECTED)
+    ========================================================= */
+
+  .song-list {
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 190px;
+  height: 222px;
+  z-index: 1;
+}
+.song-item {
+  position:absolute;
+  width: 170px;
+  padding-left: 10px;;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 0 5px 5px 0;
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  background: linear-gradient(
+      to bottom,
+      rgba(50, 50, 50, 0.95) 0%,
+      rgba(20, 20, 20, 0.94) 45%,
+      rgba(2, 2, 2, 0.94) 55%,
+      rgba(15, 15, 15, 0.96) 100%
+    );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+      7px 0 16px -1px rgba(0, 0, 0, 0.75),
+      0 1px 0 rgba(255, 255, 255, 0.08) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.55) inset;
+  }
+.song-item.selected {
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.97) 0%,
+      rgba(240, 240, 240, 0.94) 45%,
+      rgba(214, 214, 214, 0.91) 55%,
+      rgba(232, 232, 232, 0.96) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #000;
+  font-weight: bold;
+}
+.song-item .arrow {
+    position: absolute;
+    right: 14px;
+  }
+.song-preview {
+  position: absolute;
+  top: 40px;
+  left: 190px;
+  width: 130px;
+  height: 222px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 24px;
+  box-sizing: border-box;
+}
+.preview-artist {
+  margin-top: 2px;
+  width: 100%;
+  padding: 0 2px;
+  text-align: center;
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  color: #fff;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9); 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.song-preview .preview-art {
+  width: 90px;
+  height: 90px;
+  background-image: url(https://i.pinimg.com/736x/65/ec/a3/65eca3c78feb7632d3f5242dfee272c6.jpg);
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+}
+ 
+.song-preview .preview-title {
+  margin-top: 8px;
+  width: 100%;
+  padding: 0 8px;
+  text-align: center;
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9); 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* songs will load from sd card, each one is px tall, and new ones will load below eachother*/
+#song1 {top: 0px; height: 22px;}
+#song2 {top: 22px; height: 22px;}
+#song3 {top: 44px; height: 22px;}
+
+/* =========================================================
+    SCREEN 3: SONG SCREEN
+    ========================================================= */
