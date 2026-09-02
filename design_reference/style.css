@@ -131,7 +131,7 @@ body {
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 2px 2px 0;
   font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
   font-size: 12px;
   background: linear-gradient(
@@ -165,8 +165,8 @@ body {
   }
 .song-preview {
   position: absolute;
-  top: 40px;
-  left: 190px;
+  top: 28px;
+  left: 182px;
   width: 130px;
   height: 222px;
   z-index: 1;
@@ -190,8 +190,8 @@ body {
   text-overflow: ellipsis;
 }
 .song-preview .preview-art {
-  width: 90px;
-  height: 90px;
+  width: 95px;
+  height: 95px;
   background-image: url(https://i.pinimg.com/736x/65/ec/a3/65eca3c78feb7632d3f5242dfee272c6.jpg);
   background-size: cover;
   background-position: center;
@@ -212,7 +212,78 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+.scroll-track {
+  position: absolute;
+  top: 18px;
+  left: 170px;
+  width: 7px;
+  height: 222px;
+  background: linear-gradient(
+      to bottom,
+      rgba(2, 2, 2, 0.85) 0%,
+      rgba(20, 20, 20, 0.85) 50%,
+      rgba(2, 2, 2, 0.85) 100%
+    );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+ 
+.scroll-thumb {
+  position: absolute;
+  left: -1px; 
+  width: 7px;
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.97) 0%,
+      rgba(240, 240, 240, 0.94) 45%,
+      rgba(214, 214, 214, 0.91) 55%,
+      rgba(232, 232, 232, 0.96) 100%
+    );
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
+  box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.08) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.55) inset,
+      0 0 6px rgba(255, 255, 255, 0.3);
+}
+.icon-btn {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  background: linear-gradient(
+      to bottom,
+      rgba(50, 50, 50, 0.95) 0%,
+      rgba(20, 20, 20, 0.94) 45%,
+      rgba(2, 2, 2, 0.94) 55%,
+      rgba(15, 15, 15, 0.96) 100%
+    );
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.6),
+      0 1px 0 rgba(255, 255, 255, 0.1) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.5) inset;
+ 
+  color: #fff;
+  font-size: 15px;
+  z-index: 2;
+}
+ 
+#optionsBtn {
+  top: 195px;
+  left: 190px;
+}
+ 
+#searchBtn {
+  top: 195px;
+  left: 270px;
+}
 /* songs will load from sd card, each one is px tall, and new ones will load below eachother*/
 #song1 {top: 0px; height: 22px;}
 #song2 {top: 22px; height: 22px;}
